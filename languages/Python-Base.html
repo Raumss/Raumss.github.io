@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Python 基础内容   数据类型：int, long, float, string, tuple,   语法成分：变量、常量、语法、语义、异常、函数、模块、类、lambada、表达式、语句  逻辑控制：条件判断和循环语句  递归   以上分类存疑，还需要进一步理解语言才行语言类通用的部分会整理到专门的语言相关的日志，本日志只保留Python 特有的一些知识点">
+<meta name="keywords" content="Languages,todo,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础">
+<meta property="og:url" content="https://raumss.github.io/languages/Python-Base.html">
+<meta property="og:site_name" content="Raumss&#39; Blog">
+<meta property="og:description" content="Python 基础内容   数据类型：int, long, float, string, tuple,   语法成分：变量、常量、语法、语义、异常、函数、模块、类、lambada、表达式、语句  逻辑控制：条件判断和循环语句  递归   以上分类存疑，还需要进一步理解语言才行语言类通用的部分会整理到专门的语言相关的日志，本日志只保留Python 特有的一些知识点">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-11T07:38:07.411Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python基础">
+<meta name="twitter:description" content="Python 基础内容   数据类型：int, long, float, string, tuple,   语法成分：变量、常量、语法、语义、异常、函数、模块、类、lambada、表达式、语句  逻辑控制：条件判断和循环语句  递归   以上分类存疑，还需要进一步理解语言才行语言类通用的部分会整理到专门的语言相关的日志，本日志只保留Python 特有的一些知识点">
+
+
+
+
+
+
+  <link rel="canonical" href="https://raumss.github.io/languages/Python-Base.html"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Python基础 | Raumss' Blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Raumss' Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />Schedule</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+    <a href="/sitemap.xml" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />Sitemap</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+    <a href="/404/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />Commonweal 404</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+    
+      
+    
+    <a href="https://github.com/Raumss" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
+    
+      </a>
+    
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://raumss.github.io/languages/Python-Base.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Raumss">
+      <meta itemprop="description" content="野蛮其体魄 文明其精神">
+      <meta itemprop="image" content="/uploads/global/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Raumss' Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-08-30 21:01:01" itemprop="dateCreated datePublished" datetime="2018-08-30T21:01:01+00:00">2018-08-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-11 07:38:07" itemprop="dateModified" datetime="2018-09-11T07:38:07+00:00">2018-09-11</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/languages/" itemprop="url" rel="index"><span itemprop="name">Languages</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Python 基础内容</p>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 数据类型：int, long, float, string, tuple, </li>
+<li style="list-style: none"><input type="checkbox"> 语法成分：变量、常量、语法、语义、异常、函数、模块、类、lambada、表达式、语句</li>
+<li style="list-style: none"><input type="checkbox"> 逻辑控制：条件判断和循环语句</li>
+<li style="list-style: none"><input type="checkbox"> 递归</li>
+</ul>
+<blockquote>
+<p><code>以上分类存疑，还需要进一步理解语言才行</code><br><code>语言类通用的部分会整理到专门的语言相关的日志，本日志只保留Python 特有的一些知识点</code></p>
+</blockquote>
+<a id="more"></a> 
+<blockquote>
+<p>关于Think Python 2E</p>
+<ul>
+<li>这本书中讲了很多语言学的东西，还需要再单独归纳出来，放到一个单独的笔记当中；</li>
+<li>应该还有很多通用的概念，比如变量、数据类型等等，这些东西都是通用的，其实都是可以去掉的。因为以后熟悉了，都用不到了，不论在哪一种编程语言中都会降到这些内容；</li>
+<li>语言之间互相通用的一些概念，可以归纳到编程语言设计的范畴，如果以后接触编译器/解释器活着语言学的内容，可以归纳到一起；</li>
+<li>对于通用内容或语言学的内容，使用特定的tag ——<code>general</code> 标记出来</li>
+<li>梳理脉络：语言学 -&gt; 编译器/解释器 -&gt; 编程语言 -&gt; Python/C/C++ </li>
+<li>笔记最终保存的内容应该只是python 自己特有的内容</li>
+</ul>
+</blockquote>
+<h2 id="The-Way-of-the-Program"><a href="#The-Way-of-the-Program" class="headerlink" title="The Way of the Program"></a>The Way of the Program</h2><p>blahh</p>
+<h2 id="Variables-Expressions-Statements"><a href="#Variables-Expressions-Statements" class="headerlink" title="Variables, Expressions, Statements"></a>Variables, Expressions, Statements</h2><h3 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h3><p>变量名可以是任意长度，可以包含字母和数字、下划线，但是必须以字母开头。通常变量名都用小写字母，如果给一个变量起了一个非法的名字，interpreter 会报语法错误。</p>
+<p>Python 3 的关键词：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">False True None</span><br><span class="line">class def lambda yield raise</span><br><span class="line">finally and return continue for while try elif if else or pass break except</span><br><span class="line">del import assert </span><br><span class="line">global nonlocal</span><br><span class="line">not from with in as is</span><br></pre></td></tr></table></figure></p>
+<h3 id="Expressions-and-Statements"><a href="#Expressions-and-Statements" class="headerlink" title="Expressions and Statements"></a>Expressions and Statements</h3><p>An expression is a combination of values, variables and operators. A value all by itself is considered an expressioin, and so is a variable, so the following are all legal expressions:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">42</span></span><br><span class="line"><span class="number">42</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n </span><br><span class="line"><span class="number">17</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n + <span class="number">25</span></span><br><span class="line"><span class="number">42</span></span><br></pre></td></tr></table></figure></p>
+<p>When you type an expression at the prompt, the interpreter evaluates it, which means that it finds the value of the expression. In this example, <code>n</code> has the value <code>17</code> and <code>n+25</code> has the value <code>42</code>.</p>
+<p>A statement is a unit of code that has an effect, like creating a variable or displaying a value.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">17</span>			<span class="comment"># assignment statement, gives a value to `n`.</span></span><br><span class="line">print(n)		<span class="comment"># a print statement that displays the value of `n`.</span></span><br></pre></td></tr></table></figure>
+<p>When you tpye a statement, the interpreter executes it , which means that it does whatever the statement says. In general, statements don’t have values.</p>
+<h3 id="String-operations"><a href="#String-operations" class="headerlink" title="String operations"></a>String operations</h3><p>字符串一般来说不能进行输血运输，也就是所谓的加减乘除幂运算一类。但是python 中，字符串可以进行<code>+</code>操作，这个操作是将两个字符串连接起来。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">'apple'</span></span><br><span class="line">b = <span class="string">'banana'</span></span><br><span class="line"><span class="keyword">print</span> (a + b)</span><br><span class="line"></span><br><span class="line">结果是：applebanana</span><br></pre></td></tr></table></figure></p>
+<p>也就是说，字符串类型中<code>+</code>运算符并不是数值类型中的<code>+</code>，而是“字符串连接运算符“，将两个字符串首尾相接。string 类型的<code>+</code>操作，没有数字类型的<code>+</code>操作那样，可以交换操作数的位置，也就是不适用“交换律”。</p>
+<p>出自之外，<code>*</code>运算符也可以用在字符串类型上，表示<code>重复左侧字符串n次</code>。需要注意的是，<code>*</code>的左侧，必须是<code>str</code>类型，右侧必须是<code>int</code>类型，不能颠倒，也不能换成其他数据类型，float 也是不可以的。</p>
+<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><h3 id="Function-calls"><a href="#Function-calls" class="headerlink" title="Function calls"></a>Function calls</h3><ul>
+<li style="list-style: none"><input type="checkbox"> 函数定义：parameter、argument、return value</li>
+<li style="list-style: none"><input type="checkbox"> 函数调用</li>
+</ul>
+<p>In the context of programming, <code>function</code> is a named sequence of statements that performs a computation. When you define a funtion, you specify the name and the sequence of statements. Later, you can “<strong>call</strong>“ the function by name.</p>
+<p>Python 也提供方法做数据类型转换。<code>int</code> 函数可以讲数据类型转换成integer，但是不会做“四舍五入”，而是直接砍掉小数部分。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="number">3.9</span>)</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="number">-2.3</span>)</span><br><span class="line"><span class="number">-2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="string">'32'</span>)</span><br><span class="line"><span class="number">32</span></span><br></pre></td></tr></table></figure></p>
+<p><code>float</code> 函数将integer 和string 转换成浮点数。<br><code>str</code> 函数将argument 转成string 类型。</p>
+<p>A <strong>module</strong> is a file that contains a collection of related functions. Before we use the functions in a module, we have to import it with an <strong>import statement</strong>. <code>import math</code>, this statement creates a <strong>module boject</strong> named <code>math</code>. If you display the module, you get some information about it:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>math</span><br><span class="line">	&lt;module <span class="string">'math'</span> <span class="keyword">from</span> ......</span><br></pre></td></tr></table></figure></p>
+<p>The <strong>module object</strong> contains the functions and variables defined in the module. To access one of the functions, you have to specify the name of the module and the name of the function, separated by a dot(also known as a period). This format is called <strong>dot notation</strong>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>ratio = signal_powr /niose_power</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>decibels = <span class="number">10</span> * math.log10(ratio)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>radians = <span class="number">0.7</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>height = math.sin(radians)</span><br></pre></td></tr></table></figure></p>
+<h3 id="Composition"><a href="#Composition" class="headerlink" title="Composition"></a>Composition</h3><p>One of the most useful features of programming languages is their ability to take small building blocks and <strong>compose</strong> them. For example, <strong>the argument of a function can be any kind of expression</strong>, including arithmetic operators: <code>x = math.sin(degrees / 360.0 * 2 * math.pi)</code>. And even function calls: <code>x = math.exp(math.log(x+1))</code>.</p>
+<p><strong>几乎任何可以放一个value的地方都可以替换成表达式，赋值语句<code>=</code>左边必须是variable name，表达式放在左边是语法错误。</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>minutes = hours * <span class="number">60</span>	<span class="comment"># right</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>hours * <span class="number">60</span> = minutes 	<span class="comment"># wrong</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Function-Definition"><a href="#Function-Definition" class="headerlink" title="Function Definition"></a>Function Definition</h3><p>A <strong>function definition</strong> specifies the name of a new function and the sequence of statements that run when the function is called.</p>
+<p>The name of the function is a variable that refers to a function object.</p>
+<p><strong>A function object is a value you can assign to a variable or pass as an argument.<br>函数对象也是一个“值”，可以赋值给一个变量或者作为实际变量传递给另一个函数。</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">FUNC_NAME</span> <span class="params">(PARAMETER LIST)</span>:</span></span><br><span class="line">	STATEMENT <span class="number">1</span>;</span><br><span class="line">	STATEMENT <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>def</code> 是python 关键词，表示这是一个函数定义；</li>
+<li><code>def</code> 后面跟的是函数名，括号<code>()</code> 中的是形参列表（Parameter list）；</li>
+<li>函数名的命名规则和变量名一致：<ul>
+<li>字母、数字、下划线都可以，但不能以数字开头；</li>
+<li>不能使用关键词作为函数名；</li>
+<li>避免代码中有变量和函数重名；</li>
+</ul>
+</li>
+<li>函数定义的第一行称为<code>header</code>，<strong>必须以（<code>:</code>）结尾</strong></li>
+<li>其余部分称为<code>body</code>，<code>body</code>部分必须缩进，python 默认一个缩进是4个空格；</li>
+</ul>
+<ol>
+<li>python 函数定义时候使用<code>def</code>关键词，不需要指定函数（返回）类型；</li>
+<li>没有使用<code>{}</code> 包裹函数体，直接将函数体代码缩进，表示当前语句的归属；</li>
+</ol>
+<ul>
+<li>函数定义会像其他语句一样被执行，它的作用是生成一个函数对象（<code>function object</code>）；</li>
+<li>函数定义体中的代码只有当函数被调用的时候，才会执行；</li>
+<li>调用函数前必须已经创建这个函数（函数定义要在函数调用之前）；</li>
+</ul>
+<h3 id="Flow-of-execution"><a href="#Flow-of-execution" class="headerlink" title="Flow of execution"></a>Flow of execution</h3><p>要确保函数调用前已经被定义，你必须弄清楚代码的执行顺序，也就是”flow of execution“。</p>
+<p>程序执行都是从第一行代码开始，逐条往下执行，函数定义也是这样的，但是<strong>函数定义体中的代码之后当函数被调用的时候才会执行</strong>。</p>
+<p>函数调用会让执行流跳转到被调用函数的定义体中，执行完成之后再返回继续往下执行。</p>
+<p>当一个函数调用中用到了其他的函数的时候，程序的执行流程就开始变得麻烦了。</p>
+<h3 id="Parameters-and-Arguments"><a href="#Parameters-and-Arguments" class="headerlink" title="Parameters and Arguments"></a>Parameters and Arguments</h3><p>比较两者的不同，在Stack Overflow 看到的<a href="https://stackoverflow.com/questions/3176310/difference-between-parameter-and-argument#3176321" target="_blank" rel="noopener">答案</a>：</p>
+<blockquote>
+<p><strong>Argument</strong> is often used in the sense of “actual argument” vs. “formal parameter”.</p>
+</blockquote>
+<blockquote>
+<p>The formal <strong>parameter</strong> is what’s given in the function declaration/definition/prototype, the actual <strong>argument</strong> is what’s passed when calling the function, an instance of a formal <strong>parameter</strong>, if you will.<br>That being said, they’re often used interchangably, or depending on language/community.</p>
+</blockquote>
+<p>parameter 通常称为“形式参数”，在函数声明/定义的时候用到；argument通常称为“实际参数”在函数调用的时候用到，将值传递给函数定义中的形式参数。</p>
+<p>variables and parameters are local, 它们都有自己的作用域。超过这个作用域之外，它们是不存在的。</p>
+<p>如果函数调用的时候发生错误，Python会将执行出错的函数名打印出来，并且打印调用这个函数的函数，以及调用“调用这个函数的函数”的函数，直到返回到“<strong>main</strong>”函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Traceback (innermost last):</span><br><span class="line">	File &quot;test.py&quot;, line 13, in __main__</span><br><span class="line">		cat_twice(line1, line2)</span><br><span class="line">	File &quot;test.py&quot;, line 5, in cat_twice</span><br><span class="line">		print_twice(cat)</span><br><span class="line">	File &quot;test.py&quot;, line 9, in print_twice</span><br><span class="line">		print(cat)</span><br><span class="line">NameError: name &apos;cat&apos; is not defined</span><br></pre></td></tr></table></figure>
+<p>上面的一系列输出我们称之为<strong>traceback</strong>，它会告诉你程序执行时候错误发生在哪里</p>
+<h3 id="Fruitful-Functions-and-Void-Functions"><a href="#Fruitful-Functions-and-Void-Functions" class="headerlink" title="Fruitful Functions and Void Functions"></a>Fruitful Functions and Void Functions</h3><p>那些有返回值的函数，称为“fruitful functions“；相反，没有返回值的，称为“void functions”。</p>
+<p>void function 可能会现实一些信息，或者有其它效果，但是不会有返回值。如果将void function 赋值给一个变量，变量的值就是<code>None</code>，是Python中的一个特殊值。</p>
+<h3 id="Why-Functions"><a href="#Why-Functions" class="headerlink" title="Why Functions"></a>Why Functions</h3><ul>
+<li>使用函数的形式，将一组有特定功能的语句组合起来，并给它们一个有意义的名字，这样让代码更容易阅读和除错；</li>
+<li>函数可以减少重复代码，让程序更小。如果要修改一个功能，只要修改一个函数即可；</li>
+<li>将一个很长的应用程序分割成多个函数，这样可以逐个排查函数，最后将他们组合到一起；</li>
+<li>设计良好的函数可以供给多个程序使用。一旦写好一个函数，并且已经验证过，就可以重复使用它；</li>
+</ul>
+<h3 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h3><p>Debug 是写代码过程中最考验智慧，最有挑战和有趣的部分。</p>
+<p>对一些人来说，“编程”和“debug”是一回事。编程就是不断的debug 直到代码可用的过程。</p>
+<h2 id="Conditionals-and-Recursion"><a href="#Conditionals-and-Recursion" class="headerlink" title="Conditionals and Recursion"></a>Conditionals and Recursion</h2><p>这一章主要是讲条件语句和递归。</p>
+<p>在此之前先讲两个运算符：// （floor division） 和 %（modulus，取余运算符）。</p>
+<h3 id="Floor-Division-and-Modulus"><a href="#Floor-Division-and-Modulus" class="headerlink" title="Floor Division and Modulus"></a>Floor Division and Modulus</h3><p>Floor division （//） 就是将两个数相除，获得的结果向下取整（往小值取）。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3.0</span>//<span class="number">2</span></span><br><span class="line"><span class="number">1.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">-3.0</span>//<span class="number">2</span></span><br><span class="line"><span class="number">-2.0</span>			<span class="comment"># 往小了取</span></span><br></pre></td></tr></table></figure></p>
+<p>Modulus ,%, 取余运算符，就是两个数字相除只保留余数部分：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">105</span> % <span class="number">60</span></span><br><span class="line"><span class="number">45</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>取余运算符可以用来检查一个数字是否可以被另一个数字整除；</li>
+<li>取余运算符可以用来获取一个数的小数点后的数字，比如 3.14，使用<code>3.14 * 100 % 100</code>，这样就知道小数点右边的数字是<code>34</code>了；</li>
+</ol>
+<p>Python3 和Python2 在integers除法运算上的差异：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python2 </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span>/<span class="number">2</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># python3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span>/<span class="number">2</span></span><br><span class="line"><span class="number">1.5</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Boolean-Expressions"><a href="#Boolean-Expressions" class="headerlink" title="Boolean Expressions"></a>Boolean Expressions</h3><blockquote>
+<p>布尔表达式</p>
+</blockquote>
+<p>A <strong>boolean expression</strong> is an expression that is either <code>true</code> or <code>false</code>. The following examples use the operator <code>==</code>, which compares two operands and produces <code>True</code> if they are equal and <code>Flase</code> otherwise:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span> == <span class="number">5</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span> == <span class="number">6</span></span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure></p>
+<p><code>True</code> 和 <code>False</code> 是布尔类型的两个值，它们并不是string。除了<code>==</code>运算符，还有其它的：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x != y 				<span class="comment"># 不等于</span></span><br><span class="line">x &gt; y 				<span class="comment"># 大于</span></span><br><span class="line">x &lt; y 				<span class="comment"># 小于</span></span><br><span class="line">x &gt;= y 				<span class="comment"># 大于等于</span></span><br><span class="line">x &lt;= y 				<span class="comment"># 小于等于</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Logical-Operators"><a href="#Logical-Operators" class="headerlink" title="Logical Operators"></a>Logical Operators</h3><blockquote>
+<p>逻辑运算符</p>
+</blockquote>
+<p>三个逻辑运算符：<code>and</code>，<code>or</code>，<code>not</code>。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">or</span> n % <span class="number">3</span> == <span class="number">0</span>		<span class="comment"># n 能被2或者3整除都返回true</span></span><br></pre></td></tr></table></figure></p>
+<p>严格来说，<code>逻辑运算符</code>的操作数都应该是<code>布尔表达式</code>，但是Python 在这方面没有非常严格，非0值都算<code>True</code>:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">42</span> <span class="keyword">and</span> <span class="keyword">True</span></span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Conditional-Execution"><a href="#Conditional-Execution" class="headerlink" title="Conditional Execution"></a>Conditional Execution</h3><blockquote>
+<p>条件执行<br>使用条件语句，根据不同的程序环境，执行不同的指令。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> x &gt; <span class="number">0</span>:</span><br><span class="line">	<span class="keyword">print</span> (<span class="string">'x is positive'</span>)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>if</code> 关键词后边的布尔表达式<code>x &gt; 0</code> 被称为<strong>条件</strong>。如果条件满足，则后边的语句可以执行，如果不满足条件，则不会执行任何操作。</p>
+<p><code>if</code> 语句的结构和<code>function definition</code> 的结构类似：一个<code>header</code> 后面跟一段语句（<code>body</code>）。这种语句，称为复合语句（<code>compound statements</code>）。<code>body</code> 中可以包含任意数量的语句，但是有时候，<code>body</code>中没有语句也非常有用（很多时候是作为尚未进行的代码的占位符），这种情况下，可以直接使用<code>pass</code> 语句，不会执行任何操作：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">	<span class="keyword">pass</span> 					<span class="comment"># <span class="doctag">TODO:</span> need to handle negative</span></span><br><span class="line">values!</span><br></pre></td></tr></table></figure></p>
+<h3 id="Alternative-Execution"><a href="#Alternative-Execution" class="headerlink" title="Alternative Execution"></a>Alternative Execution</h3><blockquote>
+<p>选择执行<br><code>if</code> 语句的第二种形式，就是有两种可能的情况，根据不同条件决定执行哪些语句：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">	<span class="keyword">print</span> (<span class="string">'x is even'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">print</span> (<span class="string">'x is odd'</span>)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>这些可选的执行语句被称为<strong>分支</strong>，因为他们是程序执行流程中的不同的分支。</p>
+<h3 id="Chained-Conditionals"><a href="#Chained-Conditionals" class="headerlink" title="Chained Conditionals"></a>Chained Conditionals</h3><p>有些时候可能会有3个以上可能性的情况，所以我们需要更多的分支，这时候就可以使用<code>chained conditional</code>（链式条件）了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> x &lt; y:</span><br><span class="line">	<span class="keyword">print</span> (<span class="string">'x is less than y.'</span>)</span><br><span class="line"><span class="keyword">elif</span> x &gt; y:</span><br><span class="line">	<span class="keyword">print</span> (<span class="string">'x is greater than y.'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">print</span> (<span class="string">'x and y are equal.'</span>)</span><br></pre></td></tr></table></figure>
+<p><code>elif</code> 语句的使用数量是没有限制的。<code>else</code> 语句必须是最后一个可选条件，但是并非必须有一个<code>else</code>语句。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> choice == <span class="string">'a'</span>:</span><br><span class="line">	draw_a()</span><br><span class="line"><span class="keyword">elif</span> choice == <span class="string">'b'</span>:</span><br><span class="line">	draw_b()</span><br><span class="line"><span class="keyword">elif</span> choice == <span class="string">'c'</span>:</span><br><span class="line">	draw_c()</span><br></pre></td></tr></table></figure></p>
+<p>⚠️ <strong>注意：</strong></p>
+<ol>
+<li>以上每种情况都会按照先后顺序进行检查，前一个为<code>false</code> 才会检查下一种情况；</li>
+<li>如果有一个条件是<code>true</code>，就执行该条件对应的语句；</li>
+<li>即使有多个条件为<code>True</code>，但是也只执行第一个为<code>True</code> 的语句。</li>
+</ol>
+<h3 id="Nested-Conditionals"><a href="#Nested-Conditionals" class="headerlink" title="Nested Conditionals"></a>Nested Conditionals</h3><blockquote>
+<p>嵌套条件<br>一个条件可以嵌套进另一个条件中，前边的例子可以换一种写法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> x == y:</span><br><span class="line">	<span class="keyword">print</span> (<span class="string">'x and y are equal'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">if</span> x &lt; y:</span><br><span class="line">		<span class="keyword">print</span> (<span class="string">'x is less than y'</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="keyword">print</span> (<span class="string">'x is greater than y'</span>)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>嵌套的结构不利于代码的阅读，所以尽量避免这种情况。</p>
+<p>逻辑运算符通常可以用来简化嵌套语句（nested conditoinals），例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="number">0</span> &lt; x:</span><br><span class="line">	<span class="keyword">if</span> x &lt; <span class="number">10</span>:</span><br><span class="line">		<span class="keyword">print</span> (<span class="string">'x 是大于0的个位数'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>修改成如下代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> x &gt; <span class="number">0</span> <span class="keyword">and</span> x &lt; <span class="number">10</span>:</span><br><span class="line">	<span class="keyword">print</span> (<span class="string">'x 是大于0的个位数'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>Python 还提供了更加精简的模式：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="number">0</span> &lt; x &lt; <span class="number">10</span>:</span><br><span class="line">	<span class="keyword">print</span> (<span class="string">'x 是大于0的个位数'</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h3><blockquote>
+<p>递归<br>一个函数可以调用另一个函数，同样的，一个函数也可以调用自己本身。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countdown</span><span class="params">(n)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> n &lt;= <span class="number">0</span>:</span><br><span class="line">		<span class="keyword">print</span> (<span class="string">'Blastoff!'</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		print(n)</span><br><span class="line">		countdown(n<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="安装的各种问题"><a href="#安装的各种问题" class="headerlink" title="安装的各种问题"></a>安装的各种问题</h2><h3 id="CentOS-on-Raspberry-Pi3"><a href="#CentOS-on-Raspberry-Pi3" class="headerlink" title="CentOS on Raspberry Pi3"></a>CentOS on Raspberry Pi3</h3><p>直接下载源码包，进行编译安装。</p>
+<p>首先安装依赖的程序<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ yum group install <span class="string">"Development Tools"</span></span><br><span class="line">$ yum install openssl openssl-devel			<span class="comment"># 通过ssl 获取pip 和setuptools ，这样才能自动安装上setuptools 和pip</span></span><br><span class="line">$ yum install tix tcl-devel tk-devel		<span class="comment"># tkinter 的依赖</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> Python-3.4.9</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装步骤在README 文件中</span></span><br><span class="line">$ ./configure</span><br><span class="line">$ make </span><br><span class="line">$ make <span class="built_in">test</span></span><br><span class="line">$ make install</span><br><span class="line">....</span><br><span class="line">Collecting setuptools</span><br><span class="line">Collecting pip</span><br><span class="line">Installing collected packages: setuptools, pip</span><br><span class="line">Successfully installed pip-9.0.1 setuptools-28.8.0</span><br><span class="line"></span><br><span class="line"><span class="comment"># setuptools 和pip 自动安装了</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>如果不安装openssl，就无法获取setuptools 和pip。</li>
+<li>python 源码包的setup </li>
+</ul>
+<p>参考文献：</p>
+<ol>
+<li>《Think Python 2E》</li>
+<li>MIT OCW 6.0001</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持作者</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/global/wechatpay.jpg" alt="Raumss WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/global/alipay.jpg" alt="Raumss Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Raumss</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://raumss.github.io/languages/Python-Base.html" title="Python基础">https://raumss.github.io/languages/Python-Base.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Languages/" rel="tag"># Languages</a>
+          
+            <a href="/tags/todo/" rel="tag"># todo</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/tools/create_your_own_blog_with_github_hexo_next.html" rel="prev" title="创建自己的博客：Github + Hexo + NexT">
+                创建自己的博客：Github + Hexo + NexT <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/global/avatar.jpg"
+                alt="Raumss" />
+            
+              <p class="site-author-name" itemprop="name">Raumss</p>
+              <p class="site-description motion-element" itemprop="description">野蛮其体魄 文明其精神</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Raumss" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com/Raumss" target="_blank" title="Instagram"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Way-of-the-Program"><span class="nav-number">1.</span> <span class="nav-text">The Way of the Program</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Variables-Expressions-Statements"><span class="nav-number">2.</span> <span class="nav-text">Variables, Expressions, Statements</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Variables"><span class="nav-number">2.1.</span> <span class="nav-text">Variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Expressions-and-Statements"><span class="nav-number">2.2.</span> <span class="nav-text">Expressions and Statements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-operations"><span class="nav-number">2.3.</span> <span class="nav-text">String operations</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Functions"><span class="nav-number">3.</span> <span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-calls"><span class="nav-number">3.1.</span> <span class="nav-text">Function calls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Composition"><span class="nav-number">3.2.</span> <span class="nav-text">Composition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-Definition"><span class="nav-number">3.3.</span> <span class="nav-text">Function Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flow-of-execution"><span class="nav-number">3.4.</span> <span class="nav-text">Flow of execution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parameters-and-Arguments"><span class="nav-number">3.5.</span> <span class="nav-text">Parameters and Arguments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fruitful-Functions-and-Void-Functions"><span class="nav-number">3.6.</span> <span class="nav-text">Fruitful Functions and Void Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Functions"><span class="nav-number">3.7.</span> <span class="nav-text">Why Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Debugging"><span class="nav-number">3.8.</span> <span class="nav-text">Debugging</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conditionals-and-Recursion"><span class="nav-number">4.</span> <span class="nav-text">Conditionals and Recursion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Floor-Division-and-Modulus"><span class="nav-number">4.1.</span> <span class="nav-text">Floor Division and Modulus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boolean-Expressions"><span class="nav-number">4.2.</span> <span class="nav-text">Boolean Expressions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Logical-Operators"><span class="nav-number">4.3.</span> <span class="nav-text">Logical Operators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conditional-Execution"><span class="nav-number">4.4.</span> <span class="nav-text">Conditional Execution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Alternative-Execution"><span class="nav-number">4.5.</span> <span class="nav-text">Alternative Execution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chained-Conditionals"><span class="nav-number">4.6.</span> <span class="nav-text">Chained Conditionals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nested-Conditionals"><span class="nav-number">4.7.</span> <span class="nav-text">Nested Conditionals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Recursion"><span class="nav-number">4.8.</span> <span class="nav-text">Recursion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装的各种问题"><span class="nav-number">5.</span> <span class="nav-text">安装的各种问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CentOS-on-Raspberry-Pi3"><span class="nav-number">5.1.</span> <span class="nav-text">CentOS on Raspberry Pi3</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Raumss</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
