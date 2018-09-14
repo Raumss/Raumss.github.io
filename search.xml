@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[创建自己的博客：Github + Hexo + NexT]]></title>
+    <url>%2Ftools%2Fcreate_your_own_blog_with_github_hexo_next.html</url>
+    <content type="text"><![CDATA[使用GitHub + NodeJS + Hexo + NexT 主题，搭建一个属于自己的博客网站： GitHub 创建源和配置 安装NodeJS + npm 安装配置Hexo 安装配置Hexo主题NexT 实现自动编译和部署新版本 Hexo 的一些插件探究 准备工作：运行环境： Centos 7.4 NodeJS v8：安装过程状况很多，单独写一篇日志记录 Git + GitHub 前2项就不列举了，直接进入Github 的配置内容 GitHub首先你需要有一个GitHub账号，如果没有，访问GitHub网站注册一个。 创建仓库新建一个名为username.github.io 的仓库，username是你的Github 账号名，使用其他的名称无效，这样你将来的网站地址就是https://username.github.io了。 GitHub 的用户名是唯一的，所以每个用户的网站地址也就是唯一的了。 以前创建Repo 之后，需要进入Repo 的设置选项中，设置GitHub Pages，现在GitHub 会自动检测你的Repo的名称，符合条件就会直接启用GitHub Pages 功能。 Hexo + NexT123$ npm install -g hexo-cli$ cd WorkDir/Hexo$ hexo init 安装Hexo 和NexTHexo 配置导航栏、页眉、页脚配置头像配置、中文支持、时区设置新增图标、新增Menu 菜单Hexo 日志的整理方式，默认使用时间作文路径，然用tags和category分类日志永久链接格式 Hexo 操作新增page、目录、tags 搜索栏本地搜索，依赖的包：12$ cd WorkDir/Hexo$ npm install hexo-generator-searchdb --save NexT 配置NexT 在GitHub 上的源码 主页显示日志列表的时候，会把所有内容都显示完整，需要能够折叠日志内容 Hexo 添加插件浏览量统计SEOgit 插件本地搜索插件 自动发布参考阅读： https://yq.aliyun.com/articles/8609?spm=a2c4e.11153940.blogrightarea8607.20.74bc38a0Fz0qZn http://lotabout.me/2016/Hexo-Auto-Deploy-to-Github/ https://notes.iissnan.com/2016/publishing-github-pages-with-travis-ci/性能优化 参考阅读： https://yq.aliyun.com/articles/8608?spm=a2c4e.11153940.blogrightarea8607.21.74bc38a0Fz0qZn]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>CS</tag>
+        <tag>Tools</tag>
+        <tag>Network</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Computer Systems: A Programer's Perspective]]></title>
     <url>%2Funcategorized%2FComputer-Systems-A-Programer-s-Perspective.html</url>
     <content type="text"><![CDATA[内容概要Key words Computer System C language Hardware Software Network Compilation 扩展阅读小土刀：CSAPP 读薄]]></content>
@@ -14,19 +27,6 @@
     <content type="text"><![CDATA[内容要求 条理要清晰，知识点之间的关系要写明白 内容要精要，不能泰国菜啰嗦，铺垫不要过多]]></content>
       <tags>
         <tag>Computer System</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[创建自己的博客：Github + Hexo + NexT]]></title>
-    <url>%2Ftools%2Fcreate_your_own_blog_with_github_hexo_next.html</url>
-    <content type="text"><![CDATA[使用GitHub + NodeJS + Hexo + NexT 主题，搭建一个属于自己的博客网站： GitHub 创建源和配置 安装NodeJS + npm 安装配置Hexo 安装配置Hexo主题NexT 实现自动编译和部署新版本 Hexo 的一些插件探究 准备工作：运行环境： Centos 7.4 NodeJS v8：安装过程状况很多，单独写一篇日志记录 Git + GitHub 前2项就不列举了，直接进入Github 的配置内容 GitHub首先你需要有一个GitHub账号，如果没有，访问GitHub网站注册一个。 创建仓库新建一个名为username.github.io 的仓库，username是你的Github 账号名，使用其他的名称无效，这样你将来的网站地址就是https://username.github.io了。 GitHub 的用户名是唯一的，所以每个用户的网站地址也就是唯一的了。 以前创建Repo 之后，需要进入Repo 的设置选项中，设置GitHub Pages，现在GitHub 会自动检测你的Repo的名称，符合条件就会直接启用GitHub Pages 功能。 Hexo + NexT123$ npm install -g hexo-cli$ cd WorkDir/Hexo$ hexo init 安装Hexo 和NexTHexo 配置导航栏、页眉、页脚配置头像配置、中文支持、时区设置新增图标、新增Menu 菜单Hexo 日志的整理方式，默认使用时间作文路径，然用tags和category分类日志永久链接格式 Hexo 操作新增page、目录、tags 搜索栏本地搜索，依赖的包：12$ cd WorkDir/Hexo$ npm install hexo-generator-searchdb --save NexT 配置NexT 在GitHub 上的源码 主页显示日志列表的时候，会把所有内容都显示完整，需要能够折叠日志内容 Hexo 添加插件浏览量统计SEOgit 插件本地搜索插件 自动发布参考阅读： https://yq.aliyun.com/articles/8609?spm=a2c4e.11153940.blogrightarea8607.20.74bc38a0Fz0qZn http://lotabout.me/2016/Hexo-Auto-Deploy-to-Github/ https://notes.iissnan.com/2016/publishing-github-pages-with-travis-ci/性能优化 参考阅读： https://yq.aliyun.com/articles/8608?spm=a2c4e.11153940.blogrightarea8607.21.74bc38a0Fz0qZn]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>CS</tag>
-        <tag>Tools</tag>
-        <tag>Network</tag>
       </tags>
   </entry>
   <entry>
