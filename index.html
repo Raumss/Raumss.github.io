@@ -58,19 +58,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
 
 
 
@@ -85,7 +85,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '6.4.0',
+    version: '6.4.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
@@ -338,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://raumss.github.io/tools/create_your_own_blog_with_github_hexo_next.html">
+    <link itemprop="mainEntityOfPage" href="https://raumss.github.io/uncategorized/Jenkins-Base.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Raumss">
@@ -357,7 +357,793 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/tools/create_your_own_blog_with_github_hexo_next.html" itemprop="url">
+                <a class="post-title-link" href="/uncategorized/Jenkins-Base.html" itemprop="url">
+                  Jenkins-Base
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-24 18:52:31" itemprop="dateCreated datePublished" datetime="2018-09-24T18:52:31+08:00">2018-09-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-25 13:24:18" itemprop="dateModified" datetime="2018-09-25T13:24:18+08:00">2018-09-25</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>主要记录Jenkins的安装、配置、使用内容</p>
+</blockquote>
+<h2 id="Jenkins-的安装"><a href="#Jenkins-的安装" class="headerlink" title="Jenkins 的安装"></a>Jenkins 的安装</h2><p>Jenkins 的安装有三种：</p>
+<ol>
+<li>Docker 安装</li>
+<li>安装包安装</li>
+<li>war 文件</li>
+</ol>
+<h3 id="硬件要求"><a href="#硬件要求" class="headerlink" title="硬件要求"></a>硬件要求</h3><h3 id="安装包安装Jenkins"><a href="#安装包安装Jenkins" class="headerlink" title="安装包安装Jenkins"></a>安装包安装Jenkins</h3><blockquote>
+<p>在CentOS 7 环境下进行安装</p>
+</blockquote>
+<p>去Jenkins <a href="https://jenkins.io/download/" target="_blank" rel="noopener">下载页面</a>下载Jenkins 最新版的安装包，对于RHEL/Fedora/CentOS 下载rpm 格式安装包即可，安装包是<code>noarch</code> 类型，也就是任何硬件平台下的RHEL/Fedora/CentOS 都可以使用这个rpm 包安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -i jenkins-2.138.1-1.1.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h2 id="Jenkins-的使用"><a href="#Jenkins-的使用" class="headerlink" title="Jenkins 的使用"></a>Jenkins 的使用</h2><h2 id="Jenkins-的管理"><a href="#Jenkins-的管理" class="headerlink" title="Jenkins 的管理"></a>Jenkins 的管理</h2><h2 id="Jenkins-系统管理"><a href="#Jenkins-系统管理" class="headerlink" title="Jenkins 系统管理"></a>Jenkins 系统管理</h2>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://raumss.github.io/uncategorized/Install-Shadowsocks-on-CentOS.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Raumss">
+      <meta itemprop="description" content="野蛮其体魄 文明其精神">
+      <meta itemprop="image" content="/uploads/global/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Raumss' Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/uncategorized/Install-Shadowsocks-on-CentOS.html" itemprop="url">
+                  Install-Shadowsocks-on-CentOS
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-21 03:13:32 / Modified: 03:18:40" itemprop="dateCreated datePublished" datetime="2018-09-21T03:13:32+08:00">2018-09-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>本文记录在CentOS 上安装配置使用Shadowsocks<br>硬件设备有嵌入式设备Raspberry Pi 和桌面笔记本 x86 CPU<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/uncategorized/Install-Shadowsocks-on-CentOS.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://raumss.github.io/uncategorized/Jenkins-GitHub-Hexo-CI-CD.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Raumss">
+      <meta itemprop="description" content="野蛮其体魄 文明其精神">
+      <meta itemprop="image" content="/uploads/global/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Raumss' Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/uncategorized/Jenkins-GitHub-Hexo-CI-CD.html" itemprop="url">
+                  使用Jenkins+GitHub+Hexo实现博客自动部署
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-19 01:40:55" itemprop="dateCreated datePublished" datetime="2018-09-19T01:40:55+08:00">2018-09-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-24 18:52:56" itemprop="dateModified" datetime="2018-09-24T18:52:56+08:00">2018-09-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>每次在本地写完博客（Markdown 文件），都要手动执行指令生成静态html文件，然后提交到GitHub 上。通过使用Jenkins，将以上流程自动化，减少重复性劳动，提高效率，减少人工错误。</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/uncategorized/Jenkins-GitHub-Hexo-CI-CD.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://raumss.github.io/uncategorized/template.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Raumss">
+      <meta itemprop="description" content="野蛮其体魄 文明其精神">
+      <meta itemprop="image" content="/uploads/global/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Raumss' Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/uncategorized/template.html" itemprop="url">
+                  技能列表【初稿】
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-17 16:15:48" itemprop="dateCreated datePublished" datetime="2018-09-17T16:15:48+08:00">2018-09-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-18 01:03:48" itemprop="dateModified" datetime="2018-09-18T01:03:48+08:00">2018-09-18</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>本页面为效果测试页面<br>记录作为一个运维该掌握的技能列表<br>初稿，还有很多细节需要丰富</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/uncategorized/template.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://raumss.github.io/uncategorized/How-to-Fall-Asleep-in-120-Seconds.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Raumss">
+      <meta itemprop="description" content="野蛮其体魄 文明其精神">
+      <meta itemprop="image" content="/uploads/global/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Raumss' Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/uncategorized/How-to-Fall-Asleep-in-120-Seconds.html" itemprop="url">
+                  如何2分钟内入睡
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-15 02:21:14" itemprop="dateCreated datePublished" datetime="2018-09-15T02:21:14+08:00">2018-09-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-16 21:32:16" itemprop="dateModified" datetime="2018-09-16T21:32:16+08:00">2018-09-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>原文出处：<a href="https://medium.com/s/story/combat-tested-training-unwind-and-sleep-anywhere-in-120-seconds-27d5307b7606" target="_blank" rel="noopener">How to Fall Asleep in 120 Seconds</a><br>原文作者：<a href="https://medium.com/@sharonackman" target="_blank" rel="noopener">Sharon Ackman</a></p>
+</blockquote>
+<p>本文介绍的方法，是U.S Navy Pre-Flight School 的教学内容，即便是喝了咖啡或者在充满引擎噪音的环境中，96%的飞行员也可以2分钟内入睡。</p>
+<p>按照下边的步骤，你可以轻松地快速入睡。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/uncategorized/How-to-Fall-Asleep-in-120-Seconds.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://raumss.github.io/tools/Create_Your_Own_Blog_With_Github_Hexo_NexT.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Raumss">
+      <meta itemprop="description" content="野蛮其体魄 文明其精神">
+      <meta itemprop="image" content="/uploads/global/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Raumss' Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/tools/Create_Your_Own_Blog_With_Github_Hexo_NexT.html" itemprop="url">
                   创建自己的博客：Github + Hexo + NexT
                 </a>
               
@@ -387,6 +1173,22 @@
               <time title="Created: 2018-09-14 12:03:42" itemprop="dateCreated datePublished" datetime="2018-09-14T12:03:42+08:00">2018-09-14</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-28 04:36:31" itemprop="dateModified" datetime="2018-09-28T04:36:31+08:00">2018-09-28</time>
+              
             
           </span>
 
@@ -447,7 +1249,7 @@
 <li style="list-style: none"><input type="checkbox"> Hexo 的一些插件探究
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/tools/create_your_own_blog_with_github_hexo_next.html#more" rel="contents">
+            <a class="btn" href="/tools/Create_Your_Own_Blog_With_Github_Hexo_NexT.html#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1036,7 +1838,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1080,7 +1882,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -1236,28 +2048,28 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
 
 
 
   
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
+
+
+
+  
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
 
 
 

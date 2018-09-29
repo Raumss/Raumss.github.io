@@ -108,23 +108,33 @@
 
 
 
-  <meta name="description" content="野蛮其体魄 文明其精神">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Raumss&#39; Blog">
-<meta property="og:url" content="https://raumss.github.io/archives/2018/index.html">
+  <meta name="description" content="每次在本地写完博客（Markdown 文件），都要手动执行指令生成静态html文件，然后提交到GitHub 上。通过使用Jenkins，将以上流程自动化，减少重复性劳动，提高效率，减少人工错误。">
+<meta name="keywords" content="CS,Tools,Jenkins">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Jenkins+GitHub+Hexo实现博客自动部署">
+<meta property="og:url" content="https://raumss.github.io/uncategorized/Jenkins-GitHub-Hexo-CI-CD.html">
 <meta property="og:site_name" content="Raumss&#39; Blog">
-<meta property="og:description" content="野蛮其体魄 文明其精神">
+<meta property="og:description" content="每次在本地写完博客（Markdown 文件），都要手动执行指令生成静态html文件，然后提交到GitHub 上。通过使用Jenkins，将以上流程自动化，减少重复性劳动，提高效率，减少人工错误。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://raumss.github.io/uploads/Content/Jenkins-Start.png">
+<meta property="og:image" content="https://raumss.github.io/uploads/Content/Jenkins-Unlock.png">
+<meta property="og:image" content="https://raumss.github.io/uploads/Content/Jenkins-Customize.png">
+<meta property="og:image" content="https://raumss.github.io/uploads/Content/Jenkins-Plugin-Install-Error.png">
+<meta property="og:image" content="https://raumss.github.io/uploads/Content/Jenkins-Plugin-Install-Progress.png">
+<meta property="og:image" content="https://raumss.github.io/uploads/Content/Jenkins-Instance-Configuration.png">
+<meta property="og:image" content="https://raumss.github.io/uploads/Content/Jenkins-Create-Admin-User.png">
+<meta property="og:updated_time" content="2018-09-24T10:52:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Raumss&#39; Blog">
-<meta name="twitter:description" content="野蛮其体魄 文明其精神">
+<meta name="twitter:title" content="使用Jenkins+GitHub+Hexo实现博客自动部署">
+<meta name="twitter:description" content="每次在本地写完博客（Markdown 文件），都要手动执行指令生成静态html文件，然后提交到GitHub 上。通过使用Jenkins，将以上流程自动化，减少重复性劳动，提高效率，减少人工错误。">
+<meta name="twitter:image" content="https://raumss.github.io/uploads/Content/Jenkins-Start.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://raumss.github.io/archives/2018/"/>
+  <link rel="canonical" href="https://raumss.github.io/uncategorized/Jenkins-GitHub-Hexo-CI-CD.html"/>
 
 
 
@@ -134,7 +144,7 @@
   };
 </script>
 
-  <title>Archive | Raumss' Blog</title>
+  <title>使用Jenkins+GitHub+Hexo实现博客自动部署 | Raumss' Blog</title>
   
 
 
@@ -181,7 +191,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -317,399 +327,273 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://raumss.github.io/uncategorized/Jenkins-GitHub-Hexo-CI-CD.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Raumss">
+      <meta itemprop="description" content="野蛮其体魄 文明其精神">
+      <meta itemprop="image" content="/uploads/global/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Raumss' Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">使用Jenkins+GitHub+Hexo实现博客自动部署
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-19 01:40:55" itemprop="dateCreated datePublished" datetime="2018-09-19T01:40:55+08:00">2018-09-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-24 18:52:56" itemprop="dateModified" datetime="2018-09-24T18:52:56+08:00">2018-09-24</time>
+              
+            
+          </span>
+
           
-        
-        Um..! 9 posts in total. Keep on posting.
-      </span>
-      
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/uncategorized/Jenkins-Base.html" itemprop="url">
-              
-                <span itemprop="name">Jenkins-Base</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-24T18:52:31+08:00"
-              content="2018-09-24" >
-          09-24
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/uncategorized/Install-Shadowsocks-on-CentOS.html" itemprop="url">
-              
-                <span itemprop="name">Install-Shadowsocks-on-CentOS</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-21T03:13:32+08:00"
-              content="2018-09-21" >
-          09-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/uncategorized/Jenkins-GitHub-Hexo-CI-CD.html" itemprop="url">
-              
-                <span itemprop="name">使用Jenkins+GitHub+Hexo实现博客自动部署</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-19T01:40:55+08:00"
-              content="2018-09-19" >
-          09-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/uncategorized/template.html" itemprop="url">
-              
-                <span itemprop="name">技能列表【初稿】</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-17T16:15:48+08:00"
-              content="2018-09-17" >
-          09-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        <blockquote>
+<p>每次在本地写完博客（Markdown 文件），都要手动执行指令生成静态html文件，然后提交到GitHub 上。通过使用Jenkins，将以上流程自动化，减少重复性劳动，提高效率，减少人工错误。</p>
+</blockquote>
+<a id="more"></a> 
+<h3 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h3><p>Jenkins 是用Java 语言开发的持续集成、部署工具，所以要运行在Java 环境下（JRE）。<br>Jenkins 可以在JRE 中跑，也可以在Docker 中运行。</p>
+<p>本文两种方法都尝试一下，先从本地运行Jenkins 开始。</p>
+<h3 id="在本地安装运行Jenkins"><a href="#在本地安装运行Jenkins" class="headerlink" title="在本地安装运行Jenkins"></a>在本地安装运行Jenkins</h3><h4 id="安装JRE-和tomcat"><a href="#安装JRE-和tomcat" class="headerlink" title="安装JRE 和tomcat"></a>安装JRE 和tomcat</h4><p>在树莓派（CentOS 7.4）上安装，需要找JRE 的ARMv7 版本。<br>JRE8 + Tomcat 8</p>
+<p>下载JDK 8 for ARM v7 版本，JDK 中包含了JRE，<a href="http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-arm64-vfp-hflt.tar.gz?AuthParam=1537295868_10ce16710021ebba3bd464c943104450" target="_blank" rel="noopener">下载链接</a>，解压出来发现就是 <code>jdk1.8.0_181</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ yum provides java</span><br><span class="line">...省略...</span><br><span class="line">1:java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.armv7hl : OpenJDK Runtime Environment</span><br><span class="line">Repo        : updates</span><br><span class="line">Matched from:</span><br><span class="line">Provides    : java = 1:1.8.0</span><br><span class="line"></span><br><span class="line">$ yum isntall java</span><br><span class="line">.......</span><br><span class="line">Installing:</span><br><span class="line"> java-1.8.0-openjdk           armv7hl  1:1.8.0.181-3.b13.el7_5   updates  228 k</span><br><span class="line">.......</span><br></pre></td></tr></table></figure></p>
+<p><strong>安装Tomcat</strong></p>
+<p>下载tomcat 8:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget -c http://mirrors.shu.edu.cn/apache/tomcat/tomcat-8/v8.5.34/bin/apache-tomcat-8.5.34.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p><strong>还需要安装<code>java-1.8.0-openjdk-devel</code>：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install java-1.8.0-openjdk-devel</span><br></pre></td></tr></table></figure></p>
+<p>没有安装<code>java-1.8.0-openjdk-devel</code> 的时候，tomcat 可以正常启动，但是访问Jenkins 的时候会显示404.</p>
+<p>查看tomcat 的log，会有如下的错误。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ vim /tmp/tomcat/logs/catalina.out</span><br><span class="line">......</span><br><span class="line">org.apache.cataline.LifecycleException: Failed to start component [StandardEngine[Cataline].StandardHost[localhost].StandardContext[/jenkins]]</span><br><span class="line">......</span><br><span class="line">Caused by: java.util.zip.ZipException: error <span class="keyword">in</span> opening zip file </span><br><span class="line">	at java.util.zip.ZipFile.open(Native Method)</span><br><span class="line">	......</span><br><span class="line">	at org.apache.cataline.webresources.AbstractSingleArchiveResourceSet.initInternal(AbstractSingleArchiveResourceSet.java:139)</span><br><span class="line">......</span><br></pre></td></tr></table></figure></p>
+<p>安装<code>java-1.8.0-openjdk-devel</code> 之后，可以正常访问Jeninks 页面了。</p>
+<blockquote>
+<p>奇怪的是，在x86 机器上不用安装java-1.8.0-openjdk-devel 也可以正常启动Jenkins</p>
+</blockquote>
+<h4 id="tomcat-manager-访问控制"><a href="#tomcat-manager-访问控制" class="headerlink" title="tomcat manager 访问控制"></a>tomcat manager 访问控制</h4><p>我的tomcat 是运行在Raspberry Pi上的，从笔记本上访问。但是Manager 页面默认不允许从其他主机上访问。<br>参考<a href="https://stackoverflow.com/questions/36703856/access-tomcat-manager-app-from-different-host" target="_blank" rel="noopener">Stackoverflow 的回答</a>，指定可以访问Manager 页面的主机IP，我的是<code>192.168.1.11</code>。</p>
+<p><strong>配置允许访问的主机IP</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ touch WorkDir/tomcat/conf/Catalina/localhost/manager.xml</span><br><span class="line">$ vim WorkDir/tomcat/conf/Catalina/localhost/manager.xml</span><br><span class="line">&lt;Context privileged=<span class="string">"true"</span> antiResourceLocking=<span class="string">"false"</span> </span><br><span class="line">         docBase=<span class="string">"<span class="variable">$&#123;catalina.home&#125;</span>/webapps/manager"</span>&gt;</span><br><span class="line">    &lt;Valve className=<span class="string">"org.apache.catalina.valves.RemoteAddrValve"</span> allow=<span class="string">"192.168.1.11"</span> /&gt;</span><br><span class="line">&lt;/Context&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>添加Manager账号：</strong><br>编辑文件<code>WorkDir/tomcat/conf/tomcat-users.xml</code>，插入以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br><span class="line">&lt;role rolename=&quot;manager-script&quot;/&gt;</span><br><span class="line">&lt;role rolename=&quot;manager-jmx&quot;/&gt;</span><br><span class="line">&lt;user username=&quot;myName&quot; password=&quot;myPwd&quot; roles=&quot;manager-gui&quot;/&gt;</span><br><span class="line">&lt;user username=&quot;myName_script&quot; password=&quot;myPwd&quot; roles=&quot;manager-script&quot;/&gt;</span><br><span class="line">&lt;user username=&quot;myName_jmx&quot; password=&quot;myPwd&quot; roles=&quot;manager-jmx&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样访问<code>http://192.168.1.13:8080/manager/html</code>的时候，就可以使用<code>myName</code>和<code>myPwd</code> 进行登录了。</p>
+<h4 id="Jenkins-安装配置："><a href="#Jenkins-安装配置：" class="headerlink" title="Jenkins 安装配置："></a>Jenkins 安装配置：</h4><p>访问<a href="https://jenkins.io/download/" target="_blank" rel="noopener">Jenkins 下载页面</a>，下载Jenkins的war 文件，放到tomcat的webapps 目录下。</p>
+<ol>
+<li><p>启动页面：<br><img src="/uploads/Content/Jenkins-Start.png" alt=""></p>
+</li>
+<li><p>解锁界面：<br>此处需要填入密码来开始进行配置，密码可以在tomcat的logs 目录下catalina.out 文件中找到，或者如下图所说的，在<code>/root/.jenkins/secrets/initialAdminPassword</code> 文件中。<br><img src="/uploads/Content/Jenkins-Unlock.png" alt=""></p>
+</li>
+<li><p>插件安装，安装默认推荐的插件<br><img src="/uploads/Content/Jenkins-Customize.png" alt=""></p>
+</li>
+<li><p>安装插件意外报错了，刚开始以为是因为网站被墙，后来发现是因为树莓派内存空间不够：<br><img src="/uploads/Content/Jenkins-Plugin-Install-Error.png" alt=""></p>
+</li>
+<li><p>后来换成了笔记本，就顺利过了：<br><img src="/uploads/Content/Jenkins-Plugin-Install-Progress.png" alt=""></p>
+</li>
+<li><p>确认Jenkins 实例的地址：<br><img src="/uploads/Content/Jenkins-Instance-Configuration.png" alt=""></p>
+</li>
+<li><p>创建管理员账号<br><img src="/uploads/Content/Jenkins-Create-Admin-User.png" alt=""></p>
+</li>
+</ol>
+<h3 id="使用Docker安装运行Jenkins"><a href="#使用Docker安装运行Jenkins" class="headerlink" title="使用Docker安装运行Jenkins"></a>使用Docker安装运行Jenkins</h3>
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/uncategorized/How-to-Fall-Asleep-in-120-Seconds.html" itemprop="url">
-              
-                <span itemprop="name">如何2分钟内入睡</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-15T02:21:14+08:00"
-              content="2018-09-15" >
-          09-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/tools/Create_Your_Own_Blog_With_Github_Hexo_NexT.html" itemprop="url">
-              
-                <span itemprop="name">创建自己的博客：Github + Hexo + NexT</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-14T12:03:42+08:00"
-              content="2018-09-14" >
-          09-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/uncategorized/Computer-Systems-A-Programer-s-Perspective.html" itemprop="url">
-              
-                <span itemprop="name">Computer Systems: A Programer's Perspective</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-07T18:59:31+08:00"
-              content="2018-09-07" >
-          09-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/uncategorized/CSAPP.html" itemprop="url">
-              
-                <span itemprop="name">CSAPP</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-07T18:50:48+08:00"
-              content="2018-09-07" >
-          09-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/languages/Python-Base.html" itemprop="url">
-              
-                <span itemprop="name">Python基础</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-30T21:01:01+08:00"
-              content="2018-08-30" >
-          08-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持作者</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/global/wechatpay.jpg" alt="Raumss WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/global/alipay.jpg" alt="Raumss Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Raumss</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://raumss.github.io/uncategorized/Jenkins-GitHub-Hexo-CI-CD.html" title="使用Jenkins+GitHub+Hexo实现博客自动部署">https://raumss.github.io/uncategorized/Jenkins-GitHub-Hexo-CI-CD.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CS/" rel="tag"># CS</a>
+          
+            <a href="/tags/Tools/" rel="tag"># Tools</a>
+          
+            <a href="/tags/Jenkins/" rel="tag"># Jenkins</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/uncategorized/template.html" rel="next" title="技能列表【初稿】">
+                <i class="fa fa-chevron-left"></i> 技能列表【初稿】
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/uncategorized/Install-Shadowsocks-on-CentOS.html" rel="prev" title="Install-Shadowsocks-on-CentOS">
+                Install-Shadowsocks-on-CentOS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -730,8 +614,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -844,6 +737,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景知识"><span class="nav-number">1.</span> <span class="nav-text">背景知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在本地安装运行Jenkins"><span class="nav-number">2.</span> <span class="nav-text">在本地安装运行Jenkins</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装JRE-和tomcat"><span class="nav-number">2.1.</span> <span class="nav-text">安装JRE 和tomcat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tomcat-manager-访问控制"><span class="nav-number">2.2.</span> <span class="nav-text">tomcat manager 访问控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Jenkins-安装配置："><span class="nav-number">2.3.</span> <span class="nav-text">Jenkins 安装配置：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Docker安装运行Jenkins"><span class="nav-number">3.</span> <span class="nav-text">使用Docker安装运行Jenkins</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -977,6 +886,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 
