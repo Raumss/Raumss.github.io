@@ -109,14 +109,14 @@
 
 
   <meta name="description" content="使用GitHub + NodeJS + Hexo + NexT 主题，搭建一个属于自己的博客网站：   GitHub 创建源和配置  安装NodeJS + npm  安装配置Hexo   安装配置Hexo主题NexT  实现自动编译和部署新版本  Hexo 的一些插件探究">
-<meta name="keywords" content="CS,Tools,Network">
+<meta name="keywords" content="CS,Tools,Network,Unfinished">
 <meta property="og:type" content="article">
 <meta property="og:title" content="创建自己的博客：Github + Hexo + NexT">
 <meta property="og:url" content="https://raumss.github.io/tools/Create_Your_Own_Blog_With_Github_Hexo_NexT.html">
 <meta property="og:site_name" content="Raumss&#39; Blog">
 <meta property="og:description" content="使用GitHub + NodeJS + Hexo + NexT 主题，搭建一个属于自己的博客网站：   GitHub 创建源和配置  安装NodeJS + npm  安装配置Hexo   安装配置Hexo主题NexT  实现自动编译和部署新版本  Hexo 的一些插件探究">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-27T20:36:31.226Z">
+<meta property="og:updated_time" content="2018-09-29T09:20:57.048Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建自己的博客：Github + Hexo + NexT">
 <meta name="twitter:description" content="使用GitHub + NodeJS + Hexo + NexT 主题，搭建一个属于自己的博客网站：   GitHub 创建源和配置  安装NodeJS + npm  安装配置Hexo   安装配置Hexo主题NexT  实现自动编译和部署新版本  Hexo 的一些插件探究">
@@ -398,7 +398,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-28 04:36:31" itemprop="dateModified" datetime="2018-09-28T04:36:31+08:00">2018-09-28</time>
+                <time title="Modified: 2018-09-29 17:20:57" itemprop="dateModified" datetime="2018-09-29T17:20:57+08:00">2018-09-29</time>
               
             
           </span>
@@ -475,10 +475,10 @@
 <ul>
 <li>ssh-keygen 执行过程中会提示输入要生成的key 文件的名称，直接回车使用默认名称<code>id_rsa</code>。</li>
 <li>打开GitHub 主页，进入Settings -&gt; SSH and GPG keys -&gt; New SSH key。把 <code>~/.ssh/id_rsa.pub</code> 文件内容粘贴进去保存。</li>
-<li>测试能否使用ssh key 连接：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com		<span class="comment"># 注意此处使用的就是git@github.com</span></span><br><span class="line"><span class="string">"Are you sure you want to continue connecting (yes/no)?"</span> yes</span><br><span class="line"><span class="string">"Hi Raumss! You've successfully authenticated, but GitHub does not provide shell access."</span></span><br><span class="line"><span class="comment"># 出现以上提示，说明成功了</span></span><br></pre></td></tr></table></figure>
+<li>测试能否使用ssh key 连接：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com		<span class="comment"># 注意此处使的用就是git@github.com</span></span><br><span class="line"><span class="string">"Are you sure you want to continue connecting (yes/no)?"</span> yes</span><br><span class="line"><span class="string">"Hi Raumss! You've successfully authenticated, but GitHub does not provide shell access."</span></span><br><span class="line"><span class="comment"># 出现以上提示，说明成功了</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>测试ssh key 连接GitHub 可能会报错，原因是private/public key 文件权限太过宽松：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">The authenticity of host <span class="string">'github.com (192.30.253.112)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)? yes</span></span><br><span class="line"><span class="string">Warning: Permanently added '</span>github.com,192.30.253.112<span class="string">' (RSA) to the list of known hosts.</span></span><br><span class="line"><span class="string">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span></span><br><span class="line"><span class="string">@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @</span></span><br><span class="line"><span class="string">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span></span><br><span class="line"><span class="string">Permissions 0644 for '</span>/Users/russ/.ssh/id_rsa<span class="string">' are too open.</span></span><br><span class="line"><span class="string">It is required that your private key files are NOT accessible by others.</span></span><br><span class="line"><span class="string">This private key will be ignored.</span></span><br><span class="line"><span class="string">Load key "/Users/russ/.ssh/id_rsa": bad permissions</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 看一下这两个key 文件的权限</span></span><br><span class="line"><span class="string">$ ll ~/.ssh/</span></span><br><span class="line"><span class="string">-rw-r--r--  1 russ  staff  1675 Sep 27 01:28 id_rsa</span></span><br><span class="line"><span class="string">-rw-r--r--  1 russ  staff   401 Sep 27 01:28 id_rsa.pub</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 将两个文件的群组和其他用户的查看权限移除即可</span></span><br><span class="line"><span class="string">$ chmod go-r id_rsa*</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 重新进行ssh key 连接测试</span></span><br><span class="line"><span class="string">$ ssh -T git@github.com</span></span><br><span class="line"><span class="string">Hi Raumss! You'</span>ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure></p>
+<p>测试ssh key 连接GitHub 可能会报错，原因是private/public key 文件权限太过宽松：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">The authenticity of host <span class="string">'github.com (192.30.253.112)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)? yes</span></span><br><span class="line"><span class="string">Warning: Permanently added '</span>github.com,192.30.253.112<span class="string">' (RSA) to the list of known hosts.</span></span><br><span class="line"><span class="string">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span></span><br><span class="line"><span class="string">@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @</span></span><br><span class="line"><span class="string">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span></span><br><span class="line"><span class="string">Permissions 0644 for '</span>/Users/russ/.ssh/id_rsa<span class="string">' are too open.</span></span><br><span class="line"><span class="string">It is required that your private key files are NOT accessible by others.</span></span><br><span class="line"><span class="string">This private key will be ignored.</span></span><br><span class="line"><span class="string">Load key "/Users/russ/.ssh/id_rsa": bad permissions</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 看一下这两个key 文件的权限</span></span><br><span class="line"><span class="string">$ ll ~/.ssh/</span></span><br><span class="line"><span class="string">-rw-r--r--  1 russ  staff  1675 Sep 27 01:28 id_rsa</span></span><br><span class="line"><span class="string">-rw-r--r--  1 russ  staff   401 Sep 27 01:28 id_rsa.pub</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 将两个文件的群组和其他用户的查看权限移除即可</span></span><br><span class="line"><span class="string">$ chmod go-r id_rsa*</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 重新进行ssh key 连接测试</span></span><br><span class="line"><span class="string">$ ssh -T git@github.com</span></span><br><span class="line"><span class="string">"Hi Raumss! You'</span>ve successfully authenticated, but GitHub does not provide shell access.<span class="string">"</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="Hexo-NexT"><a href="#Hexo-NexT" class="headerlink" title="Hexo + NexT"></a>Hexo + NexT</h2><p>hexo 网站：</p>
 <ul>
 <li>官网：<a href="http://hexo.io" target="_blank" rel="noopener">http://hexo.io</a></li>
@@ -585,6 +585,8 @@
             <a href="/tags/Tools/" rel="tag"># Tools</a>
           
             <a href="/tags/Network/" rel="tag"># Network</a>
+          
+            <a href="/tags/Unfinished/" rel="tag"># Unfinished</a>
           
         </div>
       
@@ -737,7 +739,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

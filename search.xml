@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Git & GitHub 基础]]></title>
+    <url>%2Funcategorized%2FGit-and-GitHub.html</url>
+    <content type="text"><![CDATA[记录Git 和GitHub 的基础知识和常用操作 Git 分布式版本管理工具 背景与普通的文件存储系统相比：与SVN 相比： Git 结构工作区 -&gt; 暂存区 -&gt; 本地库 Git 代码托管中心是远程库，Git 客户端本地还有一个库。 代码托管中心： 局域网环境： 自己搭建GitLab 服务器 外网环境： GitHub 码云 Git 的操作：团队内部协作 项目开始，研发负责人（TL）在本地创建一个新项目的本地库A，简称为LA，要将LA 放到远程托管中心托管，就需要在代码托管中心也创建一个库，成为RA。 push 操作：将本地库代码推送到远程代码托管中心； TL 将LA 的代码推送到RA； 其他成员要push 代码需要先加入团队，获取提交代码（push）的权限； clone 操作：复制一份RA 的内容到本地，在本地创建一个RA 的库，并做好一系列的初始化操作； pull 操作：将RA的修改（update）拉取到本地； 团队外成员协作 项目A临时需要一个团队外的成员OM 开发一个功能。 fork 操作：OM在t1时间节点对LA 做了一份复制内容到自己的代码托管中心，简称为LA_t1_fork，然后M就可以在LA_t1_fork 上进行开发； pull request：OM 想让项目创建者TL 将自己的写的功能纳入到LA 中，就需要提出pull request （拉取请求）； merge 操作：TL接收到pull request 之后，需要对OM 的代码进行审核，审核通过之后，将其修改的内容merge （合并）到LA。 Git 仓库初始化123456789101112131415$ cd WorkDir/Git$ mkdir WeChat # 创建项目命令$ cd WeChat$ git init # 将当前目录初始化为本地仓库目录Initialized empty Git repository in WorkDir/Git/WeChat/.git $ ll .git/total 24-rw-r--r-- 1 russ staff 23 Sep 29 16:51 HEAD-rw-r--r-- 1 russ staff 137 Sep 29 16:51 config-rw-r--r-- 1 russ staff 73 Sep 29 16:51 descriptiondrwxr-xr-x 13 russ staff 416 Sep 29 16:51 hooksdrwxr-xr-x 3 russ staff 96 Sep 29 16:51 infodrwxr-xr-x 4 russ staff 128 Sep 29 16:51 objectsdrwxr-xr-x 4 russ staff 128 Sep 29 16:51 refs 设置签名（signature）： 签名的结构：用户名 + email 地址，这个是用来区分项目内不同成员的。 签名中的用户名和代码托管中心（例如GitHub）用户名没有任何关系。 签名分类： 仓库/项目级别：在项目中设置的signature，只在本项目中生效； 123$ git config user.name russ$ git config user.email xxx@xxx.com# 信息保存在仓库目录下.git/config 文件中 系统级别：git 客户端所在的系统中生效的用户签名； 123$ git config --global user.name russ$ git config --global user.email xxx@xxx.com# 信息保存在~/.gitconfig 文件中 如果一个signature 在项目和系统级都有设置，则git 优先使用项目级别signature GitHub]]></content>
+      <tags>
+        <tag>CS</tag>
+        <tag>Tools</tag>
+        <tag>Unfinished</tag>
+        <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Jenkins-Base]]></title>
     <url>%2Funcategorized%2FJenkins-Base.html</url>
     <content type="text"><![CDATA[主要记录Jenkins的安装、配置、使用内容 Jenkins 的安装Jenkins 的安装有三种： Docker 安装 安装包安装 war 文件 硬件要求安装包安装Jenkins 在CentOS 7 环境下进行安装 去Jenkins 下载页面下载Jenkins 最新版的安装包，对于RHEL/Fedora/CentOS 下载rpm 格式安装包即可，安装包是noarch 类型，也就是任何硬件平台下的RHEL/Fedora/CentOS 都可以使用这个rpm 包安装。 1$ rpm -i jenkins-2.138.1-1.1.noarch.rpm Jenkins 的使用Jenkins 的管理Jenkins 系统管理]]></content>
       <tags>
         <tag>Tools</tag>
+        <tag>Unfinished</tag>
         <tag>Jenkins</tag>
       </tags>
   </entry>
@@ -16,6 +28,7 @@
       <tags>
         <tag>CS</tag>
         <tag>Tools</tag>
+        <tag>Unfinished</tag>
       </tags>
   </entry>
   <entry>
@@ -25,6 +38,7 @@
       <tags>
         <tag>CS</tag>
         <tag>Tools</tag>
+        <tag>Unfinished</tag>
         <tag>Jenkins</tag>
       </tags>
   </entry>
@@ -34,6 +48,7 @@
     <content type="text"><![CDATA[本页面为效果测试页面记录作为一个运维该掌握的技能列表初稿，还有很多细节需要丰富 System磁盘管理、分区、RAID、文件系统创建、管理、备份系统用户、群组创建和管理用户、群组的密码系统目录分类和作用定期执行功能应用程序的管理：编译、配置、安装、升级、卸载软件源的管理：源的测速、增加、删除、文件、文本操作 系统调优 分布式文件系统容器 Network概念： OSI 七层模型 TCP/IP 网络模型 IP、Network Mask、IP Class 路由原理 负载均衡 代理服务 CDN Web 服务体系架构 CGI 硬件： Switch Router DNS NIC Cable 工具： LVS HAproxy Nginx varnish squid keepalived Keywords: DatabaseDBMS 概念数据引擎：innodb 等等概念主从复制读写分离连接池shardingMHAbin log大数据HBaseHadoopNoSQLRedisMongoDB 账号管理：创建、删除、授权、密码管理数据的备份、恢复 Monitor监控的资源：CPU、内存、流量、端口日志的查询和排错审计工具监听IP 访问状况 监控工具：Zabbix阿里云 Cloud Monitor企业级日志收集系统：ELK Security账号的权限管理账号的登录管理： 禁用root 远程登录 使用跳板机等等文件的访问权限应用程序的权限ACLSSELinux 加密： 文件加密 通信加密 SSL/TLS GSSAPI 网络防火墙各种服务软件的端口网络攻击的类型和防御手段 DevelopmentPythonShellDockerTomcat、Resin Deployment系统安装、配置 磁盘的划分 文件系统的选择 用户、密码 网络配置 常用的企业服务：DNS、FTP、Http、Mail、时间同步服务器 配置管理： CMS：配置管理系统 salt、ansible、puppet cmdb 信息管理 灰度发布中间件RabbitMQZookeeperNamenode 可持续化集成：Jenkins + GitHub虚拟化：KVMDocker]]></content>
       <tags>
         <tag>CS</tag>
+        <tag>Unfinished</tag>
         <tag>Skills</tag>
         <tag>Summary</tag>
       </tags>
@@ -50,7 +65,7 @@
   <entry>
     <title><![CDATA[创建自己的博客：Github + Hexo + NexT]]></title>
     <url>%2Ftools%2FCreate_Your_Own_Blog_With_Github_Hexo_NexT.html</url>
-    <content type="text"><![CDATA[使用GitHub + NodeJS + Hexo + NexT 主题，搭建一个属于自己的博客网站： GitHub 创建源和配置 安装NodeJS + npm 安装配置Hexo 安装配置Hexo主题NexT 实现自动编译和部署新版本 Hexo 的一些插件探究 准备工作：准备工作： UNIX/Linux：在CentOS 7.4 和Mac NodeJS v8：安装过程状况很多，单独写一篇日志记录 系统安装了Git 拥有GitHub 账号 前2项就不列举了，直接进入Github 的配置内容 GitHub首先你需要有一个GitHub账号，如果没有，访问GitHub网站注册一个。 创建仓库新建一个名为username.github.io 的仓库，username是你的Github 账号名，使用其他的名称无效，这样你将来的网站地址就是https://username.github.io了。 GitHub 的用户名是唯一的，所以每个用户的网站地址也就是唯一的了。 以前创建Repo 之后，需要进入Repo 的设置选项中，设置GitHub Pages，现在GitHub 会自动检测你的Repo的名称，符合条件就会直接启用GitHub Pages 功能。 配置SSH key使用SSH key 替代GitHub 的用户名和密码，连接GitHub 提交代码。12$ cd ~/.ssh # 如果提示没有这个目录说明是第一次使用git$ ssh-keygen -t rsa -C $email_address ssh-keygen 执行过程中会提示输入要生成的key 文件的名称，直接回车使用默认名称id_rsa。 打开GitHub 主页，进入Settings -&gt; SSH and GPG keys -&gt; New SSH key。把 ~/.ssh/id_rsa.pub 文件内容粘贴进去保存。 测试能否使用ssh key 连接：1234$ ssh -T git@github.com # 注意此处使用的就是git@github.com"Are you sure you want to continue connecting (yes/no)?" yes"Hi Raumss! You've successfully authenticated, but GitHub does not provide shell access."# 出现以上提示，说明成功了 测试ssh key 连接GitHub 可能会报错，原因是private/public key 文件权限太过宽松：123456789101112131415161718192021222324$ ssh -T git@github.comThe authenticity of host 'github.com (192.30.253.112)' can't be established.RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.Are you sure you want to continue connecting (yes/no)? yesWarning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ WARNING: UNPROTECTED PRIVATE KEY FILE! @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@Permissions 0644 for '/Users/russ/.ssh/id_rsa' are too open.It is required that your private key files are NOT accessible by others.This private key will be ignored.Load key "/Users/russ/.ssh/id_rsa": bad permissions# 看一下这两个key 文件的权限$ ll ~/.ssh/-rw-r--r-- 1 russ staff 1675 Sep 27 01:28 id_rsa-rw-r--r-- 1 russ staff 401 Sep 27 01:28 id_rsa.pub# 将两个文件的群组和其他用户的查看权限移除即可$ chmod go-r id_rsa*# 重新进行ssh key 连接测试$ ssh -T git@github.comHi Raumss! You've successfully authenticated, but GitHub does not provide shell access. Hexo + NexThexo 网站： 官网：http://hexo.io GitHub：https://github.com/hexojs/hexo Hexo 介绍TODO： Hexo 目录结构TODO： Hexo 安装和使用hexo 的安装和初始化1234$ npm install -g hexo-cli # CentOS 下$ npm install -g hexo # Mac 下$ cd WorkDir/Hexo # 这个目录就是存放博客文件的根目录$ hexo init # 在这个目录下初始化hexo 环境 在hexo 配置文件中配置GitHub 信息：12345$ vim WorkDir/Hexo/_config.ymldeploy: type: git repository: git@github.com:$username/$username.github.io.git branch: master 注意：上面每个字段后边都有一个空格将key 和value 间隔开 生成和运行网站服务：12$ hexo g # 生成静态网页，生成的文件在public 目录下$ hexo s # 启动服务器 接下来就可以通过访问localhost:4000浏览博客了 hexo clean 指令，用来清理hexo 生成的文件。 Hexo 配置导航栏、页眉、页脚配置头像配置、中文支持、时区设置新增图标、新增Menu 菜单Hexo 日志的整理方式，默认使用时间作文路径，然用tags和category分类日志永久链接格式 Hexo 操作新增page、目录、tags 搜索栏本地搜索，依赖的包：12$ cd WorkDir/Hexo$ npm install hexo-generator-searchdb --save NexT 主题NexT 在GitHub 上的源码 安装NexT主题：12$ mkdir WorkDir/Hexo/themes/NexT$ git clone https://github.com/theme-next/hexo-theme-next NexT 以上操作，将NexT 主题安装到Hexo 中了。 修改hexo 配置文件 WorkDir/Hexo/_config.yml，将theme:landscape 修改为theme:NexT Hexo 添加插件安装git 插件，这样可以直接使用hexo 指令提交代码到GitHub 上12$ npm install hexo-deployer-git --save# Mac 下，需要使用sudo hexo-deployer-git 插件会检查_config.yml 配置文件中deploy配置块，当中配置了你的GitHub 账号信息（上面已经配置好了）。浏览量统计SEOgit 插件本地搜索插件 自动发布参考阅读： Hexo折腾记——自动部署篇 Hexo 自动部署到GitHub 使用 Travis CI 自动更新 GitHub Pages 性能优化绑定域名参考阅读： 使用GitHub+hexo 搭建免费个人博客详细教程 Hexo折腾记——性能优化篇 Hexo 安裝教學、心得筆記]]></content>
+    <content type="text"><![CDATA[使用GitHub + NodeJS + Hexo + NexT 主题，搭建一个属于自己的博客网站： GitHub 创建源和配置 安装NodeJS + npm 安装配置Hexo 安装配置Hexo主题NexT 实现自动编译和部署新版本 Hexo 的一些插件探究 准备工作：准备工作： UNIX/Linux：在CentOS 7.4 和Mac NodeJS v8：安装过程状况很多，单独写一篇日志记录 系统安装了Git 拥有GitHub 账号 前2项就不列举了，直接进入Github 的配置内容 GitHub首先你需要有一个GitHub账号，如果没有，访问GitHub网站注册一个。 创建仓库新建一个名为username.github.io 的仓库，username是你的Github 账号名，使用其他的名称无效，这样你将来的网站地址就是https://username.github.io了。 GitHub 的用户名是唯一的，所以每个用户的网站地址也就是唯一的了。 以前创建Repo 之后，需要进入Repo 的设置选项中，设置GitHub Pages，现在GitHub 会自动检测你的Repo的名称，符合条件就会直接启用GitHub Pages 功能。 配置SSH key使用SSH key 替代GitHub 的用户名和密码，连接GitHub 提交代码。12$ cd ~/.ssh # 如果提示没有这个目录说明是第一次使用git$ ssh-keygen -t rsa -C $email_address ssh-keygen 执行过程中会提示输入要生成的key 文件的名称，直接回车使用默认名称id_rsa。 打开GitHub 主页，进入Settings -&gt; SSH and GPG keys -&gt; New SSH key。把 ~/.ssh/id_rsa.pub 文件内容粘贴进去保存。 测试能否使用ssh key 连接：1234$ ssh -T git@github.com # 注意此处使的用就是git@github.com"Are you sure you want to continue connecting (yes/no)?" yes"Hi Raumss! You've successfully authenticated, but GitHub does not provide shell access."# 出现以上提示，说明成功了 测试ssh key 连接GitHub 可能会报错，原因是private/public key 文件权限太过宽松：123456789101112131415161718192021222324$ ssh -T git@github.comThe authenticity of host 'github.com (192.30.253.112)' can't be established.RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.Are you sure you want to continue connecting (yes/no)? yesWarning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ WARNING: UNPROTECTED PRIVATE KEY FILE! @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@Permissions 0644 for '/Users/russ/.ssh/id_rsa' are too open.It is required that your private key files are NOT accessible by others.This private key will be ignored.Load key "/Users/russ/.ssh/id_rsa": bad permissions# 看一下这两个key 文件的权限$ ll ~/.ssh/-rw-r--r-- 1 russ staff 1675 Sep 27 01:28 id_rsa-rw-r--r-- 1 russ staff 401 Sep 27 01:28 id_rsa.pub# 将两个文件的群组和其他用户的查看权限移除即可$ chmod go-r id_rsa*# 重新进行ssh key 连接测试$ ssh -T git@github.com"Hi Raumss! You've successfully authenticated, but GitHub does not provide shell access." Hexo + NexThexo 网站： 官网：http://hexo.io GitHub：https://github.com/hexojs/hexo Hexo 介绍TODO： Hexo 目录结构TODO： Hexo 安装和使用hexo 的安装和初始化1234$ npm install -g hexo-cli # CentOS 下$ npm install -g hexo # Mac 下$ cd WorkDir/Hexo # 这个目录就是存放博客文件的根目录$ hexo init # 在这个目录下初始化hexo 环境 在hexo 配置文件中配置GitHub 信息：12345$ vim WorkDir/Hexo/_config.ymldeploy: type: git repository: git@github.com:$username/$username.github.io.git branch: master 注意：上面每个字段后边都有一个空格将key 和value 间隔开 生成和运行网站服务：12$ hexo g # 生成静态网页，生成的文件在public 目录下$ hexo s # 启动服务器 接下来就可以通过访问localhost:4000浏览博客了 hexo clean 指令，用来清理hexo 生成的文件。 Hexo 配置导航栏、页眉、页脚配置头像配置、中文支持、时区设置新增图标、新增Menu 菜单Hexo 日志的整理方式，默认使用时间作文路径，然用tags和category分类日志永久链接格式 Hexo 操作新增page、目录、tags 搜索栏本地搜索，依赖的包：12$ cd WorkDir/Hexo$ npm install hexo-generator-searchdb --save NexT 主题NexT 在GitHub 上的源码 安装NexT主题：12$ mkdir WorkDir/Hexo/themes/NexT$ git clone https://github.com/theme-next/hexo-theme-next NexT 以上操作，将NexT 主题安装到Hexo 中了。 修改hexo 配置文件 WorkDir/Hexo/_config.yml，将theme:landscape 修改为theme:NexT Hexo 添加插件安装git 插件，这样可以直接使用hexo 指令提交代码到GitHub 上12$ npm install hexo-deployer-git --save# Mac 下，需要使用sudo hexo-deployer-git 插件会检查_config.yml 配置文件中deploy配置块，当中配置了你的GitHub 账号信息（上面已经配置好了）。浏览量统计SEOgit 插件本地搜索插件 自动发布参考阅读： Hexo折腾记——自动部署篇 Hexo 自动部署到GitHub 使用 Travis CI 自动更新 GitHub Pages 性能优化绑定域名参考阅读： 使用GitHub+hexo 搭建免费个人博客详细教程 Hexo折腾记——性能优化篇 Hexo 安裝教學、心得筆記]]></content>
       <categories>
         <category>Tools</category>
       </categories>
@@ -58,6 +73,7 @@
         <tag>CS</tag>
         <tag>Tools</tag>
         <tag>Network</tag>
+        <tag>Unfinished</tag>
       </tags>
   </entry>
   <entry>
@@ -65,14 +81,7 @@
     <url>%2Funcategorized%2FComputer-Systems-A-Programer-s-Perspective.html</url>
     <content type="text"><![CDATA[内容概要Key words Computer System C language Hardware Software Network Compilation 扩展阅读小土刀：CSAPP 读薄]]></content>
       <tags>
-        <tag>Computer System</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[CSAPP]]></title>
-    <url>%2Funcategorized%2FCSAPP.html</url>
-    <content type="text"><![CDATA[内容要求 条理要清晰，知识点之间的关系要写明白 内容要精要，不能泰国菜啰嗦，铺垫不要过多]]></content>
-      <tags>
+        <tag>Unfinished</tag>
         <tag>Computer System</tag>
       </tags>
   </entry>
@@ -84,6 +93,7 @@
         <category>Languages</category>
       </categories>
       <tags>
+        <tag>Unfinished</tag>
         <tag>Languages</tag>
         <tag>todo</tag>
         <tag>Python</tag>

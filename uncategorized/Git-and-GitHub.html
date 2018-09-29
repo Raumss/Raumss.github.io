@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="内容要求 条理要清晰，知识点之间的关系要写明白 内容要精要，不能泰国菜啰嗦，铺垫不要过多">
-<meta name="keywords" content="Computer System">
+  <meta name="description" content="记录Git 和GitHub 的基础知识和常用操作">
+<meta name="keywords" content="CS,Tools,Unfinished,Dev">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSAPP">
-<meta property="og:url" content="https://raumss.github.io/uncategorized/CSAPP.html">
+<meta property="og:title" content="Git &amp; GitHub 基础">
+<meta property="og:url" content="https://raumss.github.io/uncategorized/Git-and-GitHub.html">
 <meta property="og:site_name" content="Raumss&#39; Blog">
-<meta property="og:description" content="内容要求 条理要清晰，知识点之间的关系要写明白 内容要精要，不能泰国菜啰嗦，铺垫不要过多">
+<meta property="og:description" content="记录Git 和GitHub 的基础知识和常用操作">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-14T04:03:42.000Z">
+<meta property="og:updated_time" content="2018-09-29T09:20:49.801Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSAPP">
-<meta name="twitter:description" content="内容要求 条理要清晰，知识点之间的关系要写明白 内容要精要，不能泰国菜啰嗦，铺垫不要过多">
+<meta name="twitter:title" content="Git &amp; GitHub 基础">
+<meta name="twitter:description" content="记录Git 和GitHub 的基础知识和常用操作">
 
 
 
 
 
 
-  <link rel="canonical" href="https://raumss.github.io/uncategorized/CSAPP.html"/>
+  <link rel="canonical" href="https://raumss.github.io/uncategorized/Git-and-GitHub.html"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>CSAPP | Raumss' Blog</title>
+  <title>Git & GitHub 基础 | Raumss' Blog</title>
   
 
 
@@ -339,7 +339,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://raumss.github.io/uncategorized/CSAPP.html">
+    <link itemprop="mainEntityOfPage" href="https://raumss.github.io/uncategorized/Git-and-GitHub.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Raumss">
@@ -356,7 +356,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSAPP
+          <h1 class="post-title" itemprop="name headline">Git & GitHub 基础
               
             
           </h1>
@@ -381,24 +381,12 @@
                 
               
 
-              <time title="Created: 2018-09-07 18:50:48" itemprop="dateCreated datePublished" datetime="2018-09-07T18:50:48+08:00">2018-09-07</time>
+              <time title="Created: 2018-09-29 14:57:56 / Modified: 17:20:49" itemprop="dateCreated datePublished" datetime="2018-09-29T14:57:56+08:00">2018-09-29</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-14 12:03:42" itemprop="dateModified" datetime="2018-09-14T12:03:42+08:00">2018-09-14</time>
               
             
           </span>
@@ -431,11 +419,63 @@
       
 
       
-        <h4 id="内容要求"><a href="#内容要求" class="headerlink" title="内容要求"></a>内容要求</h4><ul>
-<li>条理要清晰，知识点之间的关系要写明白</li>
-<li>内容要精要，不能泰国菜啰嗦，铺垫不要过多</li>
+        <p>记录Git 和GitHub 的基础知识和常用操作<br><a id="more"></a> </p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><blockquote>
+<p>分布式版本管理工具</p>
+</blockquote>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>与普通的文件存储系统相比：<br>与SVN 相比：</p>
+<h3 id="Git-结构"><a href="#Git-结构" class="headerlink" title="Git 结构"></a>Git 结构</h3><p>工作区 -&gt; 暂存区 -&gt; 本地库</p>
+<p>Git 代码托管中心是远程库，Git 客户端本地还有一个库。</p>
+<p>代码托管中心：</p>
+<ul>
+<li>局域网环境：<ul>
+<li>自己搭建GitLab 服务器</li>
 </ul>
-
+</li>
+<li>外网环境：<ol>
+<li>GitHub</li>
+<li>码云</li>
+</ol>
+</li>
+</ul>
+<h3 id="Git-的操作："><a href="#Git-的操作：" class="headerlink" title="Git 的操作："></a>Git 的操作：</h3><h4 id="团队内部协作"><a href="#团队内部协作" class="headerlink" title="团队内部协作"></a>团队内部协作</h4><blockquote>
+<p>项目开始，研发负责人（TL）在本地创建一个新项目的本地库A，简称为LA，要将LA 放到远程托管中心托管，就需要在代码托管中心也创建一个库，成为RA。</p>
+</blockquote>
+<ul>
+<li>push 操作：将本地库代码推送到远程代码托管中心；<ul>
+<li>TL 将LA 的代码推送到RA；</li>
+<li>其他成员要push 代码需要先加入团队，获取提交代码（push）的权限；</li>
+</ul>
+</li>
+<li>clone 操作：复制一份RA 的内容到本地，在本地创建一个RA 的库，并做好一系列的初始化操作；</li>
+<li>pull 操作：将RA的修改（update）拉取到本地；</li>
+</ul>
+<h4 id="团队外成员协作"><a href="#团队外成员协作" class="headerlink" title="团队外成员协作"></a>团队外成员协作</h4><blockquote>
+<p>项目A临时需要一个团队外的成员OM 开发一个功能。</p>
+</blockquote>
+<ul>
+<li>fork 操作：OM在t1时间节点对LA 做了一份复制内容到自己的代码托管中心，简称为LA_t1_fork，然后M就可以在LA_t1_fork 上进行开发；</li>
+<li>pull request：OM 想让项目创建者TL 将自己的写的功能纳入到LA 中，就需要提出pull request （拉取请求）；</li>
+<li>merge 操作：TL接收到pull request 之后，需要对OM 的代码进行审核，审核通过之后，将其修改的内容merge （合并）到LA。</li>
+</ul>
+<h4 id="Git-仓库初始化"><a href="#Git-仓库初始化" class="headerlink" title="Git 仓库初始化"></a>Git 仓库初始化</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> WorkDir/Git</span><br><span class="line">$ mkdir WeChat 			 <span class="comment"># 创建项目命令</span></span><br><span class="line">$ <span class="built_in">cd</span> WeChat</span><br><span class="line">$ git init 				 <span class="comment"># 将当前目录初始化为本地仓库目录</span></span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> WorkDir/Git/WeChat/.git </span><br><span class="line"></span><br><span class="line">$ ll .git/</span><br><span class="line">total 24</span><br><span class="line">-rw-r--r--   1 russ  staff   23 Sep 29 16:51 HEAD</span><br><span class="line">-rw-r--r--   1 russ  staff  137 Sep 29 16:51 config</span><br><span class="line">-rw-r--r--   1 russ  staff   73 Sep 29 16:51 description</span><br><span class="line">drwxr-xr-x  13 russ  staff  416 Sep 29 16:51 hooks</span><br><span class="line">drwxr-xr-x   3 russ  staff   96 Sep 29 16:51 info</span><br><span class="line">drwxr-xr-x   4 russ  staff  128 Sep 29 16:51 objects</span><br><span class="line">drwxr-xr-x   4 russ  staff  128 Sep 29 16:51 refs</span><br></pre></td></tr></table></figure>
+<p>设置签名（signature）：</p>
+<ul>
+<li>签名的结构：用户名 + email 地址，这个是用来区分项目内不同成员的。</li>
+<li>签名中的用户名和代码托管中心（例如GitHub）用户名没有任何关系。</li>
+</ul>
+<p>签名分类：</p>
+<ul>
+<li><p>仓库/项目级别：在项目中设置的signature，只在本项目中生效；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config user.name russ</span><br><span class="line">$ git config user.email xxx@xxx.com</span><br><span class="line"><span class="comment"># 信息保存在仓库目录下.git/config 文件中</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>系统级别：git 客户端所在的系统中生效的用户签名；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name russ</span><br><span class="line">$ git config --global user.email xxx@xxx.com</span><br><span class="line"><span class="comment"># 信息保存在~/.gitconfig 文件中</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果一个signature 在项目和系统级都有设置，则git 优先使用项目级别signature</p>
+</li>
+</ul>
+<h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2>
       
     </div>
 
@@ -485,7 +525,7 @@
     <strong>Post author:  </strong>Raumss</li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://raumss.github.io/uncategorized/CSAPP.html" title="CSAPP">https://raumss.github.io/uncategorized/CSAPP.html</a>
+    <a href="https://raumss.github.io/uncategorized/Git-and-GitHub.html" title="Git & GitHub 基础">https://raumss.github.io/uncategorized/Git-and-GitHub.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.</li>
@@ -498,7 +538,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Computer-System/" rel="tag"># Computer System</a>
+            <a href="/tags/CS/" rel="tag"># CS</a>
+          
+            <a href="/tags/Tools/" rel="tag"># Tools</a>
+          
+            <a href="/tags/Unfinished/" rel="tag"># Unfinished</a>
+          
+            <a href="/tags/Dev/" rel="tag"># Dev</a>
           
         </div>
       
@@ -511,8 +557,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/languages/Python-Base.html" rel="next" title="Python基础">
-                <i class="fa fa-chevron-left"></i> Python基础
+              <a href="/uncategorized/Jenkins-Base.html" rel="next" title="Jenkins-Base">
+                <i class="fa fa-chevron-left"></i> Jenkins-Base
               </a>
             
           </div>
@@ -520,10 +566,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/uncategorized/Computer-Systems-A-Programer-s-Perspective.html" rel="prev" title="Computer Systems: A Programer's Perspective">
-                Computer Systems: A Programer's Perspective <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -651,7 +693,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -701,7 +747,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#内容要求"><span class="nav-number">1.</span> <span class="nav-text">内容要求</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-结构"><span class="nav-number">1.2.</span> <span class="nav-text">Git 结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-的操作："><span class="nav-number">1.3.</span> <span class="nav-text">Git 的操作：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#团队内部协作"><span class="nav-number">1.3.1.</span> <span class="nav-text">团队内部协作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#团队外成员协作"><span class="nav-number">1.3.2.</span> <span class="nav-text">团队外成员协作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git-仓库初始化"><span class="nav-number">1.3.3.</span> <span class="nav-text">Git 仓库初始化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub"><span class="nav-number">2.</span> <span class="nav-text">GitHub</span></a></li></ol></div>
             
 
           </div>
